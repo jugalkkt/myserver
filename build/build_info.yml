@@ -1,0 +1,59 @@
+cmake:
+  application:
+    configuration-dir: '/home/jugal/zephyrproject/zephyr/work/myserver'
+    source-dir: '/home/jugal/zephyrproject/zephyr/work/myserver'
+  board:
+    name: 'esp32_ethernet_kit'
+    path:
+     - '/home/jugal/zephyrproject/zephyr/boards/espressif/esp32_ethernet_kit'
+    qualifiers: 'esp32/procpu'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - '/home/jugal/zephyrproject/zephyr/dts/bindings'
+    files:
+     - '/home/jugal/zephyrproject/zephyr/boards/espressif/esp32_ethernet_kit/esp32_ethernet_kit_procpu.dts'
+    include-dirs:
+     - '/home/jugal/zephyrproject/modules/hal/ambiq/dts'
+     - '/home/jugal/zephyrproject/modules/hal/atmel/include'
+     - '/home/jugal/zephyrproject/modules/hal/bouffalolab/include'
+     - '/home/jugal/zephyrproject/modules/hal/bouffalolab/include/zephyr'
+     - '/home/jugal/zephyrproject/modules/hal/gigadevice/include'
+     - '/home/jugal/zephyrproject/modules/hal/microchip/include'
+     - '/home/jugal/zephyrproject/modules/hal/microchip/dts'
+     - '/home/jugal/zephyrproject/modules/hal/nuvoton/dts'
+     - '/home/jugal/zephyrproject/modules/hal/nxp/dts'
+     - '/home/jugal/zephyrproject/modules/hal/stm32/dts'
+     - '/home/jugal/zephyrproject/modules/hal/ti/dts'
+     - '/home/jugal/zephyrproject/zephyr/include'
+     - '/home/jugal/zephyrproject/zephyr/include/zephyr'
+     - '/home/jugal/zephyrproject/zephyr/dts/common'
+     - '/home/jugal/zephyrproject/zephyr/dts/vendor'
+     - '/home/jugal/zephyrproject/zephyr/dts/rx'
+     - '/home/jugal/zephyrproject/zephyr/dts/x86'
+     - '/home/jugal/zephyrproject/zephyr/dts/xtensa'
+     - '/home/jugal/zephyrproject/zephyr/dts/sparc'
+     - '/home/jugal/zephyrproject/zephyr/dts/riscv'
+     - '/home/jugal/zephyrproject/zephyr/dts/posix'
+     - '/home/jugal/zephyrproject/zephyr/dts/arm64'
+     - '/home/jugal/zephyrproject/zephyr/dts/arm'
+     - '/home/jugal/zephyrproject/zephyr/dts/arc'
+     - '/home/jugal/zephyrproject/zephyr/dts'
+  kconfig:
+    files:
+     - '/home/jugal/zephyrproject/zephyr/boards/espressif/esp32_ethernet_kit/esp32_ethernet_kit_procpu_defconfig'
+     - '/home/jugal/zephyrproject/zephyr/work/myserver/prj.conf'
+     - '/home/jugal/zephyrproject/zephyr/work/myserver/build/zephyr/misc/generated/extra_kconfig_options.conf'
+    user-files:
+     - '/home/jugal/zephyrproject/zephyr/work/myserver/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: '/home/jugal/zephyr-sdk-0.17.0'
+  zephyr:
+    version: '4.1.99'
+    zephyr-base: '/home/jugal/zephyrproject/zephyr'
+version: '0.1.0'
+west:
+  command: '/home/jugal/zephyrproject/.venv/bin/west build -p auto -b esp32_ethernet_kit/esp32/procpu -- -DCONFIG_NET_L2_ETHERNET=y'
+  topdir: '/home/jugal/zephyrproject'
+  version: '1.3.0'

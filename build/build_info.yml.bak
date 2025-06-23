@@ -1,0 +1,5 @@
+west:
+  command: /home/jugal/zephyrproject/.venv/bin/west build -p auto -b esp32_ethernet_kit/esp32/procpu
+    -- -DCONFIG_NET_L2_ETHERNET=y
+  topdir: /home/jugal/zephyrproject
+  version: 1.3.0

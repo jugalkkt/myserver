@@ -1,0 +1,2 @@
+# Load Zephyr board Kconfig descriptions.
+osource "/home/jugal/zephyrproject/zephyr/boards/espressif/esp32_ethernet_kit/Kconfig"
