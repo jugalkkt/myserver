@@ -37,7 +37,7 @@ struct fs_mount_t littlefs_mnt = {
     }
 
     // Open file for writing
-    const char *file_name = "/lfs/test.bin";
+    const char *file_name = "/lfs/test2.llext";
     struct fs_file_t zfp;
     fs_file_t_init(&zfp);
     rc = fs_open(&zfp, file_name,FS_O_CREATE | FS_O_WRITE);

@@ -52,24 +52,24 @@ Section Headers:
   [28] .dram0.noinit     NOBITS          3ffbd760 017cc0 00903c 00  WA  0   0 16
   [29] .ext_ram          NOBITS          3f800000 05da64 040000 00  WA  0   0  1
   [30] .flash.rodat[...] NOBITS          00017af8 017cb8 008508 00  WA  0   0  1
-  [31] .flash.rodata     PROGBITS        3f400000 020000 00b5fc 00   A  0   0 65536
-  [32] .flash.rodata_end NOBITS          3f40bd28 02bd28 0042d8 00  WA  0   0  1
-  [33] initlevel         PROGBITS        3f40b5fc 02b5fc 0000c8 00   A  0   0  4
-  [34] device_area       PROGBITS        3f40b6c4 02b6c4 000144 00   A  0   0  4
-  [35] entropy_driv[...] PROGBITS        3f40b808 02b808 000008 00   A  0   0  4
-  [36] flash_driver[...] PROGBITS        3f40b810 02b810 000018 00   A  0   0  4
-  [37] gpio_driver_[...] PROGBITS        3f40b828 02b828 000024 00   A  0   0  4
-  [38] clock_contro[...] PROGBITS        3f40b84c 02b84c 00001c 00   A  0   0  4
-  [39] mdio_driver_[...] PROGBITS        3f40b868 02b868 000018 00   A  0   0  4
-  [40] uart_driver_[...] PROGBITS        3f40b880 02b880 00004c 00   A  0   0  4
-  [41] ethphy_drive[...] PROGBITS        3f40b8cc 02b8cc 000028 00   A  0   0  4
-  [42] net_l3_regis[...] PROGBITS        3f40b8f4 02b8f4 000030 00   A  0   0  4
-  [43] net_socket_r[...] PROGBITS        3f40b924 02b924 000010 00   A  0   0  4
-  [44] shell_area        PROGBITS        3f40b934 02b934 000030 00   A  0   0  4
-  [45] shell_root_c[...] PROGBITS        3f40b964 02b964 000034 00   A  0   0  4
-  [46] shell_subcmd[...] PROGBITS        3f40b998 02b998 000384 00   A  0   0  4
-  [47] shell_dynami[...] PROGBITS        3f40bd1c 02bd1c 00000c 00   A  0   0  4
-  [48] .flash.text_dummy NOBITS          0002bd28 02bd28 0042d8 00  WA  0   0  1
+  [31] .flash.rodata     PROGBITS        3f400000 020000 00b600 00   A  0   0 65536
+  [32] .flash.rodata_end NOBITS          3f40bd2c 02bd2c 0042d4 00  WA  0   0  1
+  [33] initlevel         PROGBITS        3f40b600 02b600 0000c8 00   A  0   0  4
+  [34] device_area       PROGBITS        3f40b6c8 02b6c8 000144 00   A  0   0  4
+  [35] entropy_driv[...] PROGBITS        3f40b80c 02b80c 000008 00   A  0   0  4
+  [36] flash_driver[...] PROGBITS        3f40b814 02b814 000018 00   A  0   0  4
+  [37] gpio_driver_[...] PROGBITS        3f40b82c 02b82c 000024 00   A  0   0  4
+  [38] clock_contro[...] PROGBITS        3f40b850 02b850 00001c 00   A  0   0  4
+  [39] mdio_driver_[...] PROGBITS        3f40b86c 02b86c 000018 00   A  0   0  4
+  [40] uart_driver_[...] PROGBITS        3f40b884 02b884 00004c 00   A  0   0  4
+  [41] ethphy_drive[...] PROGBITS        3f40b8d0 02b8d0 000028 00   A  0   0  4
+  [42] net_l3_regis[...] PROGBITS        3f40b8f8 02b8f8 000030 00   A  0   0  4
+  [43] net_socket_r[...] PROGBITS        3f40b928 02b928 000010 00   A  0   0  4
+  [44] shell_area        PROGBITS        3f40b938 02b938 000030 00   A  0   0  4
+  [45] shell_root_c[...] PROGBITS        3f40b968 02b968 000034 00   A  0   0  4
+  [46] shell_subcmd[...] PROGBITS        3f40b99c 02b99c 000384 00   A  0   0  4
+  [47] shell_dynami[...] PROGBITS        3f40bd20 02bd20 00000c 00   A  0   0  4
+  [48] .flash.text_dummy NOBITS          0002bd2c 02bd2c 0042d4 00  WA  0   0  1
   [49] .flash.text       PROGBITS        400d0000 030000 02da64 00  AX  0   0 65536
   [50] .comment          PROGBITS        00000000 05da64 000020 01  MS  0   0  1
   [51] .debug_aranges    PROGBITS        00000000 05da88 007ed8 00      0   0  8
@@ -101,9 +101,9 @@ Program Headers:
   LOAD           0x000000 0x00017af8 0x00017af8 0x00000 0x08508 RW  0x1
   LOAD           0x000000 0x3ffb6db8 0x00017af8 0x00000 0x069a8 RW  0x8
   LOAD           0x000000 0x3ffbd760 0x00017af8 0x00000 0x0903c RW  0x10
-  LOAD           0x020000 0x3f400000 0x00020000 0x0bd28 0x0bd28 R   0x10000
-  LOAD           0x000000 0x0002bd28 0x0002bd28 0x00000 0x042d8 RW  0x1
-  LOAD           0x000000 0x3f40bd28 0x0002bd28 0x00000 0x042d8 RW  0x1
+  LOAD           0x020000 0x3f400000 0x00020000 0x0bd2c 0x0bd2c R   0x10000
+  LOAD           0x000000 0x0002bd2c 0x0002bd2c 0x00000 0x042d4 RW  0x1
+  LOAD           0x000000 0x3f40bd2c 0x0002bd2c 0x00000 0x042d4 RW  0x1
   LOAD           0x030000 0x400d0000 0x00030000 0x2da64 0x2da64 R E 0x10000
   LOAD           0x000000 0x3f800000 0x3f800000 0x00000 0x40000 RW  0x1
 
