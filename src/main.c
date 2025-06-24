@@ -37,10 +37,10 @@ struct fs_mount_t littlefs_mnt = {
     }
 
     // Open file for writing
-    const char *file_name = "/lfs/text1.bin";
+    const char *file_name = "/lfs/test.bin";
     struct fs_file_t zfp;
     fs_file_t_init(&zfp);
-    rc = fs_open(&zfp, file_name,FS_O_CREATE | FS_O_APPEND);
+    rc = fs_open(&zfp, file_name,FS_O_CREATE | FS_O_WRITE);
 
     if (rc < 0) {
         LOG_ERR("Failed to open file for writing [%d]", rc);
@@ -93,16 +93,21 @@ struct fs_mount_t littlefs_mnt = {
 
         // Write received data to file
 	printf("n=%d\n",n);
-        printf("buffer is %s",buffer);
+        printf("Received: %.*s\n", n, buffer);  // Safe length-limited print
         ssize_t written = fs_write(&zfp, buffer, n);
         if (written < 0) {
             LOG_ERR("File write error: %d", written);
             break;
         }
-
-        LOG_INF("Received and wrote %d bytes", n);
+	printf("wriiten = %d\n", written);
+        printf("Received and wrote %d bytes", n);
+	break;
     }
-
+    void *data_buffer=malloc(n);
+    printf("return value of fs_read is %d", fs_read(&zfp,data_buffer,n ));
+    printf("%p", data_buffer);
+    free(data_buffer);
+    data_buffer=NULL;
     fs_close(&zfp);
     close(sockfd);
 }
