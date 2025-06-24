@@ -8,8 +8,8 @@
 #define PORT 4242
 #define BUFFER_SIZE 1024
 
-#define FS_O_CREATE 0x10
-#define FS_O_WRITE 0x02
+/*#define FS_O_CREATE 0x10
+//#define FS_O_WRITE 0x02*/
 
 #include <zephyr/fs/fs.h>
 #include <zephyr/fs/littlefs.h>
@@ -40,7 +40,7 @@ struct fs_mount_t littlefs_mnt = {
     const char *file_name = "/lfs/text1.bin";
     struct fs_file_t zfp;
     fs_file_t_init(&zfp);
-    rc = fs_open(&zfp, file_name,FS_O_CREATE | FS_O_WRITE | FS_O_TRUNC);
+    rc = fs_open(&zfp, file_name,FS_O_CREATE | FS_O_APPEND);
 
     if (rc < 0) {
         LOG_ERR("Failed to open file for writing [%d]", rc);
@@ -92,7 +92,8 @@ struct fs_mount_t littlefs_mnt = {
         }
 
         // Write received data to file
-
+	printf("n=%d\n",n);
+        printf("buffer is %s",buffer);
         ssize_t written = fs_write(&zfp, buffer, n);
         if (written < 0) {
             LOG_ERR("File write error: %d", written);
